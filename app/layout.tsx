@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { ChakraProvider } from "@chakra-ui/react";
 
 export const metadata = {
     title: "Create Next App",
@@ -11,8 +11,9 @@ export default function RootLayout({children} : {children: React.ReactNode;}) {
     return (
         <html lang="ja">
         <head />
-        <body>
-        <header>
+            <body>
+                <ChakraProvider>
+                    <header>
             <h1>
                 <Link href="/">ブログ</Link>
             </h1>
@@ -22,6 +23,7 @@ export default function RootLayout({children} : {children: React.ReactNode;}) {
         <footer>
             <small>© 2023 azukiazusa</small>
         </footer>
+        </ChakraProvider>
         </body>
         </html>
     );
